@@ -1,11 +1,19 @@
 // ThemeToggler.js
 
 import { FaSun, FaMoon } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 
 const ThemeToggler = () => {
   const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [theme]);
 
   const handleThemeToggle = () => {
     const newTheme = theme === "light" ? "dark" : "light";

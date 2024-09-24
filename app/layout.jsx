@@ -35,7 +35,6 @@ export default function RootLayout({ children }) {
           {/* Empty element for the background image */}
         </div>
 
-        {/* This element will have low opacity, but its children will not */}
         <div
           style={{
             position: "relative", // Add this line
