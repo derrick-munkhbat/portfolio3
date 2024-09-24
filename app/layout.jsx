@@ -1,10 +1,12 @@
 import { JetBrains_Mono } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 
 //components
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
+import backgroundImg from "../public/images/background-img.jpg"; // Import the background image
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -21,9 +23,30 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={jetbrainsMono.variable}>
-        <Header />
-        <StairTransition />
-        <PageTransition>{children}</PageTransition>
+        <div
+          className="absolute h-screen w-full"
+          style={{
+            backgroundImage: `url(${backgroundImg.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: "0.3",
+          }}
+        >
+          {/* Empty element for the background image */}
+        </div>
+
+        {/* This element will have low opacity, but its children will not */}
+        <div
+          style={{
+            position: "relative", // Add this line
+            opacity: ".8",
+          }}
+        >
+          {/* Children elements will be rendered on top of the background image */}
+          <Header />
+          <StairTransition />
+          <PageTransition>{children}</PageTransition>
+        </div>
       </body>
     </html>
   );
