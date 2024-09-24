@@ -11,6 +11,7 @@ const ThemeToggler = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     document.body.classList.toggle("dark-mode", newTheme === "dark");
+    console.log(`Theme changed to: ${newTheme}`);
   };
 
   return (

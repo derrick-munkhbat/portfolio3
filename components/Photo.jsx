@@ -30,6 +30,7 @@ const Photo = () => {
               quality={100}
               fill
               alt="profile-pic"
+              sizes="(min-width: 100vw) 100vw, 100vw"
               className="object-cover brightness-90 rounded-full shadow-xl shadow-black"
             />
           </motion.div>
