@@ -21,6 +21,7 @@
     "glob": "^11.0.0",
     "lucide-react": "^0.441.0",
     "next": "^14.2.13",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-countup": "^6.5.3",
     "react-dom": "^18",
