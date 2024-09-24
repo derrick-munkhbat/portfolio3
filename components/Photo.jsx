@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Photo = () => {
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full bg-">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
@@ -45,8 +45,8 @@ const Photo = () => {
               cx="253"
               cy="253"
               r="250"
-              stroke="#00ff99"
-              strokeWidth="4"
+              stroke="black"
+              strokeWidth="6"
               strokeLinecap="round"
               strokeLinejoin="round"
               initial={{ strokeDasharray: "24 10 0 0" }}

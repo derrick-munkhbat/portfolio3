@@ -14,9 +14,9 @@ const Home = () => {
             <span className="text-xl">Junior full-stack developer</span>
             <h1 className="h1 my-6">
               Hello, I'm <br />
-              <span className="text-accent">Derrick Munkhbat</span>
+              <span className="">Derrick Munkhbat</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
+            <p className="max-w-[500px] mb-9 text-primary">
               I'm looking to expand my skills and experience in full-stack
               development, taking on new challenges and staying up-to-date with
               the latest technologies and trends. I'm excited to explore
@@ -36,7 +36,7 @@ const Home = () => {
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
-                  iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
+                  iconStyles="w-9 h-9 border border-black rounded-full flex justify-center items-center text-black text-base hover:bg-slate-200 hover:text-primary hover:transition-all duration-500"
                 />
               </div>
             </div>
