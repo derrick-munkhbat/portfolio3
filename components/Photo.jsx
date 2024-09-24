@@ -25,17 +25,17 @@ const Photo = () => {
             className="absolute w-full h-full"
           >
             <Image
-              src="/assets/headshot.png"
+              src="/images/profile-1.jpg"
               priority
               quality={100}
               fill
               alt="profile-pic"
-              className="object-contain brightness-90 rounded-full"
+              className="object-cover brightness-90 rounded-full shadow-xl shadow-black"
             />
           </motion.div>
 
           {/* circle */}
-          <motion.svg
+          {/* <motion.svg
             className="absolute w-full h-full"
             fill="transparent"
             viewBox="0 0 506 506"
@@ -60,7 +60,7 @@ const Photo = () => {
                 repeatType: "reverse",
               }}
             ></motion.circle>
-          </motion.svg>
+          </motion.svg> */}
         </div>
       </motion.div>
     </div>
