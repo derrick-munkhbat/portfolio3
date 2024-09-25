@@ -40,7 +40,7 @@ const Nav = () => {
             className={`${
               link.path === pathname &&
               "border-b-2 border-primary hover:border-slate-200 dark:border-white round-lg"
-            } capitalize font-medium hover:text-primary transition-all  hover:bg-slate-200  hover:rounded-xl p-2`}
+            } capitalize font-medium hover:text-primary transition-all  hover:bg-slate-100 hover:rounded-xl p-2`}
           >
             {link.name}
           </Link>
