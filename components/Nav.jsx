@@ -31,15 +31,16 @@ const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex gap-8 text-primary dark:text-white text-xl">
+    <nav className="flex gap-8 text-primary dark:text-white text-xl ">
       {links.map((link, index) => {
         return (
           <Link
             href={link.path}
             key={index}
             className={`${
-              link.path === pathname && "border-b-2 border-primary dark:border-white"
-            } capitalize font-medium hover:text-primary transition-all`}
+              link.path === pathname &&
+              "border-b-2 border-primary hover:border-slate-200 dark:border-white round-lg"
+            } capitalize font-medium hover:text-primary transition-all  hover:bg-slate-200  hover:rounded-xl p-2`}
           >
             {link.name}
           </Link>
