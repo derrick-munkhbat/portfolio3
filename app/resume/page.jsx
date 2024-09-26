@@ -147,15 +147,22 @@ import {
 } from "@/components/ui/tooltip";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { motion } from "framer-motion";
+import { easeIn, motion } from "framer-motion";
 
 const Resume = () => {
   return (
-    <section className="h-full flex flex-col px-4">
-      <div className="container mx-auto bg-slate-100 dark:bg-slate-800 rounded-2xl">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24 xl:px-10"></div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+      }}
+      className="container auto bg-slate-100 dark:bg-slate-800 rounded-2xl min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+    >
+      <div className="">
+        <div>resume</div>
       </div>
-    </section>
+    </motion.div>
   );
 };
 
