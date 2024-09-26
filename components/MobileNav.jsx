@@ -36,13 +36,14 @@ const MobileNav = () => {
     <div>
       <Sheet>
         <div className="flex gap-5">
-          <ThemeToggler />
           <SheetTrigger className="flex justify-center items-center">
             <CiMenuFries className="text-[32px] text-black dark:text-white" />
           </SheetTrigger>
         </div>
         <SheetContent className="flex-flex-col">
           {/* logo */}
+          <ThemeToggler/>
+
           <div className="mt-32 mb-40 text-center text-2xl">
             <Link href="/">
               <h1 className="text-4xl font-bold text-black dark:text-white">
@@ -58,8 +59,9 @@ const MobileNav = () => {
                   href={link.path}
                   key={index}
                   className={`${
-                    link.path === pathname && "text-primary border-primary"
-                  }text-xl dark:text-white/80 capitalize hover:text-primary transition-all`}
+                    link.path === pathname &&
+                    "border-b-2 border-primary hover:border-slate-200 dark:border-white round-lg"
+                  } capitalize font-bold hover:text-primary transition-all  hover:bg-slate-100 hover:rounded-xl p-2`}
                 >
                   {link.name}
                 </Link>

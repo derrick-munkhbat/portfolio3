@@ -23,11 +23,14 @@ const ThemeToggler = () => {
   };
 
   return (
-    <Button onClick={handleThemeToggle}>
+    <Button
+      onClick={handleThemeToggle}
+      className="bg-slate-600 hover:bg-slate-800 dark:bg-slate-300 dark:hover:bg-slate-200"
+    >
       {theme === "light" ? (
-        <FaMoon className="w-[15px] h-[15px]" />
+        <FaMoon className="w-[15px] h-[15px] text-white dark:text-slate-800 " />
       ) : (
-        <FaSun className="w-[15px] h-[15px]" />
+        <FaSun className="w-[15px] h-[15px] " />
       )}
     </Button>
   );
