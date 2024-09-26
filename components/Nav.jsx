@@ -31,7 +31,7 @@ const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex gap-8 text-primary dark:text-white text-xl ">
+    <nav className="flex gap-8 text-black dark:text-white text-xl">
       {links.map((link, index) => {
         return (
           <Link
@@ -40,7 +40,7 @@ const Nav = () => {
             className={`${
               link.path === pathname &&
               "border-b-2 border-primary hover:border-slate-200 dark:border-white round-lg"
-            } capitalize font-medium hover:text-primary transition-all  hover:bg-slate-100 hover:rounded-xl p-2`}
+            } capitalize font-bold hover:text-primary transition-all  hover:bg-slate-100 hover:rounded-xl p-2`}
           >
             {link.name}
           </Link>

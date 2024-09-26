@@ -10,11 +10,11 @@ import ThemeToggler from "./ThemeToggler";
 
 const Header = () => {
   return (
-    <header className="py-8 xl:py-12 text-primary ">
+    <header className="py-8 xl:py-12">
       <div className="container mx-auto flex justify-between items-center">
         {/* logo */}
         <Link href="/">
-          <h1 className="text-4xl font-semibold text-primary dark:text-white">
+          <h1 className="text-4xl font-bold text-black dark:text-white">
             Derrick.
           </h1>
         </Link>
@@ -26,7 +26,7 @@ const Header = () => {
         </div>
 
         {/* mobile nav and hire me button*/}
-        <div className="xl:hidden ">
+        <div className="xl:hidden">
           <MobileNav />
         </div>
       </div>

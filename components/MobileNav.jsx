@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
+import ThemeToggler from "./ThemeToggler";
 
 const links = [
   {
@@ -34,18 +35,23 @@ const MobileNav = () => {
   return (
     <div>
       <Sheet>
-        <SheetTrigger className="flex justify-center items-center">
-          <CiMenuFries className="text-[32px] text-primary" />
-        </SheetTrigger>
+        <div className="flex gap-5">
+          <ThemeToggler />
+          <SheetTrigger className="flex justify-center items-center">
+            <CiMenuFries className="text-[32px] text-black dark:text-white" />
+          </SheetTrigger>
+        </div>
         <SheetContent className="flex-flex-col">
           {/* logo */}
           <div className="mt-32 mb-40 text-center text-2xl">
             <Link href="/">
-              <h1 className="text-4xl font-semibold text-primary">Derrick.</h1>
+              <h1 className="text-4xl font-bold text-black dark:text-white">
+                Derrick.
+              </h1>
             </Link>
           </div>
           {/* nav */}
-          <nav className="flex flex-col justify-center items-center gap-8">
+          <nav className="flex flex-col justify-center items-center gap-8 text-2xl font-semibold">
             {links.map((link, index) => {
               return (
                 <Link
@@ -53,7 +59,7 @@ const MobileNav = () => {
                   key={index}
                   className={`${
                     link.path === pathname && "text-primary border-primary"
-                  }text-xl capitalize hover:text-primary transition-all`}
+                  }text-xl dark:text-white/80 capitalize hover:text-primary transition-all`}
                 >
                   {link.name}
                 </Link>
