@@ -33,44 +33,40 @@ const links = [
 const MobileNav = () => {
   const pathname = usePathname();
   return (
-    <div>
-      <Sheet>
-        <div className="flex gap-5">
-          <SheetTrigger className="flex justify-center items-center">
-            <CiMenuFries className="text-[32px] text-black dark:text-white" />
-          </SheetTrigger>
-        </div>
-        <SheetContent className="flex-flex-col">
-          {/* logo */}
-          <ThemeToggler/>
+    <Sheet>
+      <SheetTrigger className="flex justify-center items-center">
+        <CiMenuFries className="text-[32px] text-black dark:text-white" />
+      </SheetTrigger>
 
-          <div className="mt-32 mb-40 text-center text-2xl">
-            <Link href="/">
-              <h1 className="text-4xl font-bold text-black dark:text-white">
-                Derrick.
-              </h1>
-            </Link>
-          </div>
-          {/* nav */}
-          <nav className="flex flex-col justify-center items-center gap-8 text-2xl font-semibold">
-            {links.map((link, index) => {
-              return (
-                <Link
-                  href={link.path}
-                  key={index}
-                  className={`${
-                    link.path === pathname &&
-                    "border-b-2 border-primary hover:border-slate-200 dark:border-white round-lg"
-                  } capitalize font-bold hover:text-primary transition-all  hover:bg-slate-100 hover:rounded-xl p-2`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-          </nav>
-        </SheetContent>
-      </Sheet>
-    </div>
+      <SheetContent className="flex-flex-col">
+        {/* logo */}
+
+        <div className="mt-32 mb-40 text-center text-2xl">
+          <Link href="/">
+            <h1 className="text-4xl font-bold text-black dark:text-white">
+              Derrick.
+            </h1>
+          </Link>
+        </div>
+        {/* nav */}
+        <nav className="flex flex-col justify-center items-center gap-8 text-2xl font-semibold">
+          {links.map((link, index) => {
+            return (
+              <Link
+                href={link.path}
+                key={index}
+                className={`${
+                  link.path === pathname &&
+                  "border-b-2 hover:border-slate-200 dark:border-white round-lg"
+                } capitalize font-bold hover:text-primary transition-all  hover:bg-slate-100 hover:rounded-xl p-2`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </nav>
+      </SheetContent>
+    </Sheet>
   );
 };
 
