@@ -18,12 +18,12 @@ const links = [
     path: "/work",
   },
   {
-    name: "contact",
-    path: "/contact",
-  },
-  {
     name: "gallery",
     path: "/gallery",
+  },
+  {
+    name: "contact",
+    path: "/contact",
   },
 ];
 
