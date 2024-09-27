@@ -13,10 +13,6 @@ const Header = () => {
     <header className="py-8 xl:py-12">
       <div className="container mx-auto xl:flex flex justify-between items-center">
         {/* logo */}
-        <div className="xl:hidden">
-          <ThemeToggler />
-        </div>
-
         <Link href="/">
           <h1 className="text-4xl font-bold text-black dark:text-white">
             Derrick.
