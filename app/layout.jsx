@@ -6,7 +6,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
-import backgroundImg from "../public/images/background-img.jpg"; // Import the background image
+import backgroundImg from "../public/assets/images/background-img.jpg"; // Import the background image
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],

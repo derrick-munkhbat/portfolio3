@@ -25,7 +25,7 @@ const Photo = () => {
             className="absolute w-full h-full"
           >
             <Image
-              src="/images/profile-1.jpg"
+              src="/assets/images/profile-1.jpg"
               priority
               quality={100}
               fill
