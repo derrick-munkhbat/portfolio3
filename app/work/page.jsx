@@ -73,17 +73,17 @@ const Work = () => {
       }}
       className="h-full flex flex-col px-4"
     >
-      <div className="container mx-auto bg-slate-100 dark:bg-slate-800 rounded-2xl py-5 ">
+      <div className="container mx-auto bg-slate-100 dark:bg-slate-800 rounded-2xl p-5 xl:p-10">
         {/* <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24 xl:px-10"> */}
-        <div className="flex flex-col xl:flex-row xl:gap=[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
+        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
+          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none ">
             <div className="flex flex-col gap-[30px] h-[50%]">
               {/* outline num */}
               <div className="text-8xl leading-none text-black dark:text-white font-extrabold text-outline">
                 {project.num}
               </div>
               {/* project category */}
-              <h2 className="text-[42px] font-bold leading-none dark:text-white group-hover:text-accent transition-all duration-500 capitalize">
+              <h2 className="text-[42px] font-bold leading-none dark:text-white transition-all duration-500 capitalize">
                 {project.category} project
               </h2>
               {/* project description */}
@@ -150,7 +150,7 @@ const Work = () => {
                         <Image
                           src={project.image}
                           fill
-                          className="object-cover"
+                          className="object-cover "
                           alt=""
                         />
                       </div>

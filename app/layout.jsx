@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
         <div
           style={{
             position: "relative", // Add this line
-            opacity: ".8",
+            opacity: "1",
           }}
         >
           {/* Children elements will be rendered on top of the background image */}
