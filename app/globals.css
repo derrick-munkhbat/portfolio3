@@ -29,7 +29,7 @@
   border-radius: 10px;
 } */
 
-  .images {
+  /* .images {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -38,5 +38,5 @@
   .images img {
     border: 1px solid #ccc;
     border-radius: 10px;
-  }
+  } */
 }
