@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const images = [
   {
@@ -62,7 +63,14 @@ const Gallery = () => {
   };
 
   return (
-    <section className="h-full flex flex-col px-4">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+      }}
+      className="h-full flex flex-col px-4"
+    >
       <div className="container mx-auto bg-slate-100 dark:bg-slate-800 rounded-2xl">
         <div className="flex xl:flex-nowrap flex-wrap overflow-x-auto py-5 gap-5 relative">
           {images.map((image, index) => (
@@ -92,7 +100,7 @@ const Gallery = () => {
           />
         </div>
       )}
-    </section>
+    </motion.section>
   );
 };
 
