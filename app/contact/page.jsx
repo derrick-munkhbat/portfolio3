@@ -60,8 +60,9 @@ const Contact = () => {
                 Let's work together
               </h3>
               <p className="text-black dark:text-white/60">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                pariatur laborum in voluptatem officiis itaque dicta.
+                Need a full stack web developer for your next project? I can
+                help you design and build a fast, secure, and scalable web
+                application. Let's chat and bring your vision to life!
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

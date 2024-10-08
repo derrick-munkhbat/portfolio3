@@ -15,7 +15,7 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium veritatis illum fuga a perspiciatis fugit iste.",
+    "Full stack web developer building innovative and user-friendly web applications.",
   info: [
     {
       fieldName: "Name",
@@ -290,7 +290,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="flex items-center justify-center xl:justify-start gap-4"
+                          className="flex items-center justify-start gap-4"
                         >
                           <span className="dark:text-white/60">
                             {item.fieldName}

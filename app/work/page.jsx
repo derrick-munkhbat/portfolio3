@@ -27,7 +27,7 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ad recusandae nobis dicta placeat alias debitis ex, consequatur aliquam.",
     stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: "/assets/work/thumb1.png",
+    image: "/assets/work/portfolio.jpg",
     live: "",
     github: "",
   },
@@ -144,13 +144,13 @@ const Work = () => {
                   <SwiperSlide key={index} className="w-full">
                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 ">
                       {/* overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 rounded-xl"></div>
                       {/* image */}
-                      <div className="relative w-full h-full ">
+                      <div className="relative w-full h-full">
                         <Image
                           src={project.image}
                           fill
-                          className="object-cover "
+                          className="object-cover rounded-xl"
                           alt=""
                         />
                       </div>
