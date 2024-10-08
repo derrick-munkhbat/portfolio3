@@ -38,7 +38,7 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ad recusandae nobis dicta placeat alias debitis ex, consequatur aliquam.",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/work/thumb2.png",
+    image: "/assets/work/portfolio.jpg",
     live: "",
     github: "",
   },
@@ -49,7 +49,7 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ad recusandae nobis dicta placeat alias debitis ex, consequatur aliquam.",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/portfolio.jpg",
     live: "",
     github: "",
   },
@@ -132,7 +132,7 @@ const Work = () => {
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%] ">
+          <div className="w-full xl:w-[50%]">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
@@ -141,17 +141,17 @@ const Work = () => {
             >
               {projects.map((project, index) => {
                 return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 ">
+                  <SwiperSlide key={index} className="w-full ">
+                    <div className="h-[460px] relative group flex justify-center items-center   ">
                       {/* overlay */}
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 rounded-xl"></div>
                       {/* image */}
-                      <div className="relative w-full h-full">
+                      <div className="relative w-full h-full ">
                         <Image
                           src={project.image}
                           fill
                           className="object-cover rounded-xl"
-                          alt=""
+                          alt="img"
                         />
                       </div>
                     </div>
