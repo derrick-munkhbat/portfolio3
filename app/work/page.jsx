@@ -25,8 +25,14 @@ const projects = [
     category: "frontend",
     title: "project 1",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ad recusandae nobis dicta placeat alias debitis ex, consequatur aliquam.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
+      "This is my most recent front-end project. I used shadcn/ui framework and its theme changing component.",
+    stack: [
+      { name: "Html" },
+      { name: "Tailwind.css" },
+      { name: "JavaScript" },
+      { name: "Next.js" },
+      { name: "Shadcn/ui" },
+    ],
     image: "/assets/work/portfolio.jpg",
     live: "",
     github: "",
@@ -35,10 +41,15 @@ const projects = [
     num: "02",
     category: "fullstack",
     title: "project 2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ad recusandae nobis dicta placeat alias debitis ex, consequatur aliquam.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/work/portfolio.jpg",
+    description: "This is a fullstack group project from Pinecone academy.",
+    stack: [
+      { name: "Typescript" },
+      { name: "Tailwind.css" },
+      { name: "Next.js" },
+      { name: "Express.js" },
+      { name: "MongoDB" },
+    ],
+    image: "/assets/work/food-delivery.jpg",
     live: "",
     github: "",
   },
@@ -47,9 +58,36 @@ const projects = [
     category: "frontend",
     title: "project 3",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ad recusandae nobis dicta placeat alias debitis ex, consequatur aliquam.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
-    image: "/assets/work/portfolio.jpg",
+      "This is a frontend project from Pinecone academy focused on grid. This is an API call to an external API, processing data on the client-side, and not interacting with a backend server.",
+    stack: [
+      { name: "Html" },
+      { name: "Tailwind.css" },
+      { name: "JavaScript" },
+      { name: "Next.js" },
+    ],
+    image: "/assets/work/blog.jpg",
+    live: "",
+    github: "",
+  },
+  {
+    num: "04",
+    category: "frontend",
+    title: "project 4",
+    description:
+      "This is a Pinecone academy frontend project, a clone site of www.gogo.mn",
+    stack: [{ name: "Html" }, { name: "Css" }, { name: "Javascript" }],
+    image: "/assets/work/gogo.jpg",
+    live: "",
+    github: "",
+  },
+  {
+    num: "05",
+    category: "frontend",
+    title: "project 5",
+    description:
+      "This is my very first html, css, javascript project at Pinecone academy.",
+    stack: [{ name: "Html" }, { name: "Css" }, { name: "Javascript" }],
+    image: "/assets/work/khuvsgul-trip.jpg",
     live: "",
     github: "",
   },
@@ -88,12 +126,12 @@ const Work = () => {
               </h2>
               {/* project description */}
               <p className="dark:text-white/60">{project.description}</p>
-              <ul className="flex gap-4">
+              {/* stack names */}
+              <ul className="flex flex-wrap gap-4">
                 {project.stack.map((item, index) => {
                   return (
                     <li key={index} className="text-xl dark:text-white">
                       {item.name}
-                      {/* remove the last comma */}
                       {index !== project.stack.length - 1 && ","}
                     </li>
                   );
