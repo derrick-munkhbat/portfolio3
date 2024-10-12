@@ -1,6 +1,7 @@
 import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import { Button } from "@/components/ui/button";
+import ViewCV from "@/components/ViewCV";
 import { FiDownload } from "react-icons/fi";
 
 const Home = () => {
@@ -24,14 +25,15 @@ const Home = () => {
             </p>
             {/* button and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button
+              <ViewCV/>
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="uppercase flex items-center gap-2"
               >
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />
-              </Button>
+              </Button> */}
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
