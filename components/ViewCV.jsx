@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
 const ViewCV = () => {
-  const [loading, setLoading] = useState(false);
   const pdfUrl =
     "https://drive.google.com/file/d/1OpqfmTxBZ6T_8zxazP8WgflyJh6dxAm9/view?usp=drive_link"; // Replace with your Google Drive file ID
 
