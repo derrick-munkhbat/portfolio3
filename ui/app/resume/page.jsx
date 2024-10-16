@@ -57,7 +57,7 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium veritatis illum fuga a perspiciatis fugit iste.",
+    "I spent 2 months of hands-on, onsite internship at Pinecone Academy in Ulaanbaatar, Mongolia. The project was on their own website www.pinecone.mn. Our team was assigned to human resource payroll, grab the incoming data after calculations to display on user-interface and send each individual employees payroll data to their email.",
   items: [
     {
       company: "Pinecone Academy LLC.",
@@ -72,7 +72,7 @@ const education = {
   icon: "/assets/resume/badge.svg",
   title: "My education",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium veritatis illum fuga a perspiciatis fugit iste.",
+    "I have a bachelors degree in Software Engineering at the University of Humanities. I'm also certified in full-stack web development spending 6 months bootcamp at Pinecone Academy in Ulaanbaatar, Mongolia.",
   items: [
     {
       institution: "Pinecone Academy LLC",
@@ -101,7 +101,7 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium veritatis illum fuga a perspiciatis fugit iste.",
+    "You can say I'm a MERN developer.",
   skillList: [
     {
       icon: <FaHtml5 />,
