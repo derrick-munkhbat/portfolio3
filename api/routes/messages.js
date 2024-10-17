@@ -22,19 +22,17 @@ router.get("/messages", async (req, res) => {
 });
 
 // Define a route to post a new message
-router.post("/messages", async (req, res) => {
-  const { name, email, message } = req.body;
+router.post("/", async (req, res) => {
+  const { first_name, last_name, email, phone_number, message } = req.body;
 
   // Validate the request body
-  if (!name || !email || !message) {
-    return res
-      .status(400)
-      .json({ error: "Name, email, and message are required." });
+  if (!first_name || !last_name || !email || !phone_number || !message) {
+    return res.status(400).json({ error: "All fields are are required." });
   }
 
   try {
     // Insert the new message into the database
-    await sql`INSERT INTO messages (name, email, message) VALUES (${name}, ${email}, ${message})`;
+    await sql`INSERT INTO messages (first_name, last_name, email, phone_number, message) VALUES (${first_name}, ${last_name}, ${email}, ${phone_number}, ${message})`;
 
     // Respond with a success message
     res.status(201).json({ message: "Message created successfully!" });

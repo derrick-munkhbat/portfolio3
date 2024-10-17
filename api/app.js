@@ -1,6 +1,7 @@
 // Load environment variables from .env file
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const { neon } = require("@neondatabase/serverless");
 
 // Create an Express application
@@ -16,12 +17,12 @@ const sql = neon(
 
 // Import the messages routes
 const messagesRoutes = require("./routes/messages");
+// Use the messages routes directly
+app.use("/messages", messagesRoutes); // No base path, routes will be accessible directly
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-
-// Use the messages routes directly
-app.use(messagesRoutes); // No base path, routes will be accessible directly
+app.use(cors());
 
 // Your existing function to get PostgreSQL version, if needed
 async function getPgVersion() {
@@ -42,6 +43,6 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-app.get("/", (req, res) => {
+app.get("/", cors(), (req, res) => {
   res.send("Backend is running!");
 });
