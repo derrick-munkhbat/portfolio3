@@ -5,7 +5,7 @@ import { FiDownload } from "react-icons/fi";
 
 const ViewCV = () => {
   const pdfUrl =
-    "https://drive.google.com/file/d/1OpqfmTxBZ6T_8zxazP8WgflyJh6dxAm9/view?usp=drive_link"; // Replace with your Google Drive file ID
+    "https://drive.google.com/file/d/1OpqfmTxBZ6T_8zxazP8WgflyJh6dxAm9/view?usp=drive_link";
 
   const handleDownload = () => {
     const link = document.createElement("a");
