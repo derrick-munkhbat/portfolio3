@@ -5,16 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 
-// import {
-//   Select,
-//   SelectContent,
-//   SelectGroup,
-//   SelectItem,
-//   SelectLabel,
-//   SelectTrigger,
-//   SelectValue,
-// } from "@/components/ui/select";
-
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -36,8 +26,6 @@ const info = [
   },
 ];
 
-
-
 const Contact = () => {
   // Step 1: State for form inputs
   const [formData, setFormData] = useState({
@@ -47,18 +35,32 @@ const Contact = () => {
     phone: "",
     message: "",
   });
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
 
   // Step 2: Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  const [errorMessage, setErrorMessage] = useState(""); // State for error message
+  const [successMessage, setSuccessMessage] = useState(""); // State for success message
 
   // Step 3: Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
+
+    // Check for empty inputs
+    if (
+      formData.first_name.trim() === "" ||
+      formData.last_name.trim() === "" ||
+      formData.email.trim() === "" ||
+      formData.phone.trim() === "" ||
+      formData.comment.trim() === ""
+    ) {
+      // Display an error message if any input is empty
+      setErrorMessage("Please fill in all fields.");
+      return;
+    }
+
     try {
       const response = await fetch("http://localhost:3000/api/messages", {
         method: "POST",
@@ -78,6 +80,11 @@ const Contact = () => {
           phone: "",
           comment: "",
         }); // Reset form
+
+        // Clear the success message after 3 seconds
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 3000); // 3000 milliseconds = 3 seconds
       } else {
         setErrorMessage("Error sending message. Please try again.");
         setSuccessMessage(""); // Clear any previous success messages
@@ -114,6 +121,11 @@ const Contact = () => {
                 help you design and build a fast, secure, and scalable web
                 application. Let's chat and bring your vision to life!
               </p>
+              {/* Display error or success messages */}
+              {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+              {successMessage && (
+                <p className="text-green-500">{successMessage}</p>
+              )}
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
@@ -144,14 +156,13 @@ const Contact = () => {
 
               {/* textarea */}
               <Textarea
-                name="comment"
+                name="comment" // Make sure this matches the state key
                 className="h-[200px]"
                 placeholder="Type your message here"
                 value={formData.comment} // Bind value to state
                 onChange={handleChange} // Handle input change
               />
-              {/* btn  */}
-
+              {/* btn */}
               <Button variant="outline" className="max-w-40" type="submit">
                 Send Message
               </Button>
