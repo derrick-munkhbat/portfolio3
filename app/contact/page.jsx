@@ -5,17 +5,18 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectGroup,
+//   SelectItem,
+//   SelectLabel,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select";
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const info = [
   {
@@ -35,7 +36,7 @@ const info = [
   },
 ];
 
-import { motion } from "framer-motion";
+
 
 const Contact = () => {
   // Step 1: State for form inputs
@@ -43,9 +44,11 @@ const Contact = () => {
     first_name: "",
     last_name: "",
     email: "",
-    phone_number: "",
+    phone: "",
     message: "",
   });
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Step 2: Handle input change
   const handleChange = (e) => {
@@ -57,22 +60,32 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
     try {
-      const response = await fetch("http://localhost:3000/messages", {
+      const response = await fetch("http://localhost:3000/api/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData), // Send form data as JSON
       });
+
       if (response.ok) {
-        // Handle success
-        console.log("Message sent successfully!");
+        setSuccessMessage("Message sent successfully!");
+        setErrorMessage(""); // Clear any previous error messages
+        setFormData({
+          first_name: "",
+          last_name: "",
+          email: "",
+          phone: "",
+          comment: "",
+        }); // Reset form
       } else {
-        // Handle error
-        console.error("Error sending message");
+        setErrorMessage("Error sending message. Please try again.");
+        setSuccessMessage(""); // Clear any previous success messages
       }
     } catch (error) {
       console.error("Error:", error);
+      setErrorMessage("An unexpected error occurred. Please try again.");
+      setSuccessMessage(""); // Clear any previous success messages
     }
   };
 
@@ -122,19 +135,19 @@ const Contact = () => {
                   onChange={handleChange}
                 />
                 <Input
-                  name="phone_number"
+                  name="phone"
                   placeholder="Phone number"
-                  value={formData.phone_number}
+                  value={formData.phone}
                   onChange={handleChange}
                 />
               </div>
 
               {/* textarea */}
               <Textarea
-                name="message"
+                name="comment"
                 className="h-[200px]"
                 placeholder="Type your message here"
-                value={formData.message} // Bind value to state
+                value={formData.comment} // Bind value to state
                 onChange={handleChange} // Handle input change
               />
               {/* btn  */}
