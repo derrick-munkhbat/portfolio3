@@ -33,7 +33,7 @@ const Contact = () => {
     last_name: "",
     email: "",
     phone: "",
-    message: "",
+    comment: "",
   });
 
   // Step 2: Handle input change

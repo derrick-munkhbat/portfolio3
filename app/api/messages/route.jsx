@@ -1,21 +1,40 @@
 import connectMondoDB from "@/libs/mongodb";
 import Message from "@/models/message";
+import { sendContactEmail } from "@/libs/sendEmail";
 
 export async function POST(request) {
-  // Parse the request body
-  const { first_name, last_name, phone, email, comment } = await request.json();
+  try {
+    const { first_name, last_name, phone, email, comment } =
+      await request.json();
 
-  // Connect to the database
-  await connectMondoDB();
+    await connectMondoDB();
+    await Message.create({ first_name, last_name, phone, email, comment });
 
-  // Create a new message
-  await Message.create({ first_name, last_name, phone, email, comment });
+    try {
+      await sendContactEmail({
+        first_name,
+        last_name,
+        phone,
+        email,
+        comment,
+      });
+    } catch (emailError) {
+      console.error("Failed to send contact email:", emailError);
+    }
 
-  // Return a JSON response
-  return new Response(JSON.stringify({ message: "Message created" }), {
-    status: 201,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+    return new Response(JSON.stringify({ message: "Message created" }), {
+      status: 201,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  } catch (error) {
+    console.error("Failed to save message:", error);
+    return new Response(JSON.stringify({ message: "Failed to send message" }), {
+      status: 500,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
 }
