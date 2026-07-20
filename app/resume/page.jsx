@@ -58,7 +58,7 @@ const experience = {
   title: "My experience",
   description: [
     "I spent 2 months of hands-on, onsite internship at Pinecone Academy in Ulaanbaatar, Mongolia. The project was on their own website www.pinecone.mn. Our team was assigned to human resource payroll, grab the incoming data after calculations to display on user-interface and send each individual employees payroll data to their email.",
-    "I have 1.5 years of experience at Tech Partners LLC. where I was a Frontend Web Developer working on various projects:",
+    "I have 1.5 years of experience at TESO Investment LLC. where I was a Frontend Web Developer working on various projects:",
   ],
   projectHighlights: [
     "iTrip web and admin frontend, Go backend when needed",
@@ -69,7 +69,7 @@ const experience = {
   ],
   items: [
     {
-      company: "Tech Partners LLC.",
+      company: "TESO Investment LLC.",
       position: "Frontend Web Developer Intern",
       duration: "2025-2026",
     },
