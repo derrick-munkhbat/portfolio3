@@ -27,7 +27,7 @@ const about = {
     },
     {
       fieldName: "Experience",
-      fieldValue: "1 Year",
+      fieldValue: "2 Years",
     },
     {
       fieldName: "Google voice",
@@ -56,9 +56,23 @@ const about = {
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
-  description:
+  description: [
     "I spent 2 months of hands-on, onsite internship at Pinecone Academy in Ulaanbaatar, Mongolia. The project was on their own website www.pinecone.mn. Our team was assigned to human resource payroll, grab the incoming data after calculations to display on user-interface and send each individual employees payroll data to their email.",
+    "I have 1.5 years of experience at Tech Partners LLC. where I was a Frontend Web Developer working on various projects:",
+  ],
+  projectHighlights: [
+    "iTrip web and admin frontend, Go backend when needed",
+    "Apex investing admin frontend",
+    "Warehouse erp - customer, supplier, sales representative and admin frontend",
+    "Medical erp - customer, supplier, sales representative and admin frontend",
+    "Business to business erp - customer, supplier, sales representative and admin frontend",
+  ],
   items: [
+    {
+      company: "Tech Partners LLC.",
+      position: "Frontend Web Developer Intern",
+      duration: "2025-2026",
+    },
     {
       company: "Pinecone Academy LLC.",
       position: "Full-stack Web Developer Intern",
@@ -81,7 +95,7 @@ const education = {
     },
     {
       institution: "The University of Humanities",
-      degree: "Software Engineer",
+      degree: "Software Engineering",
       duration: "2023",
     },
     {
@@ -100,8 +114,7 @@ const education = {
 //skills data
 const skills = {
   title: "My skills",
-  description:
-    "You can say I'm a MERN developer.",
+  description: "You can say I'm a MERN developer.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -178,9 +191,16 @@ const Resume = () => {
               <TabsContent value="experience" className="w-full">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{experience.title}</h3>
-                  <p className="max-w-[600px] text-black dark:text-white/60 mx-auto xl:mx-0">
-                    {experience.description}
-                  </p>
+                  <div className="max-w-[600px] text-black dark:text-white/60 mx-auto xl:mx-0 space-y-4">
+                    {experience.description.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                    <ul className="list-disc list-inside space-y-1 text-left">
+                      {experience.projectHighlights.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
                   <ScrollArea className="h-[400px]">
                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                       {experience.items.map((item, index) => {
