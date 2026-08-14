@@ -57,8 +57,8 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description: [
-    "I spent 2 months of hands-on, onsite internship at Pinecone Academy in Ulaanbaatar, Mongolia. The project was on their own website www.pinecone.mn. Our team was assigned to human resource payroll, grab the incoming data after calculations to display on user-interface and send each individual employees payroll data to their email.",
-    "I have 1.5 years of experience at TESO Investment LLC. where I was a Frontend Web Developer working on various projects:",
+    "I completed a 2-month hands-on, onsite internship at Pinecone Academy in Ulaanbaatar, Mongolia. During the internship, I worked primarily on frontend development for an HR and payroll system, developing features for employee management, salary calculation, and payroll notifications.",
+    "I have 1.5 years of professional experience as a Frontend Developer at Tech Partners LLC, working on various web-based ERP and business systems:",
   ],
   projectHighlights: [
     "iTrip web and admin frontend, Go backend when needed",
@@ -70,12 +70,12 @@ const experience = {
   items: [
     {
       company: "TESO Investment LLC.",
-      position: "Frontend Web Developer Intern",
+      position: "Frontend Developer",
       duration: "2025-2026",
     },
     {
       company: "Pinecone Academy LLC.",
-      position: "Full-stack Web Developer Intern",
+      position: "Fullstack Developer Intern",
       duration: "2024",
     },
   ],
@@ -86,16 +86,16 @@ const education = {
   icon: "/assets/resume/badge.svg",
   title: "My education",
   description:
-    "I have a bachelors degree in Software Engineering at the University of Humanities. I'm also certified in full-stack web development spending 6 months bootcamp at Pinecone Academy in Ulaanbaatar, Mongolia.",
+    "I have a bachelors degree in Computer Programming at the University of Humanities. I'm also certified in full-stack web development spending 6 months bootcamp at Pinecone Academy in Ulaanbaatar, Mongolia.",
   items: [
     {
       institution: "Pinecone Academy LLC",
-      degree: "Full Stack Web Development Bootcamp",
+      degree: "Fullstack Developer Bootcamp",
       duration: "2024",
     },
     {
       institution: "The University of Humanities",
-      degree: "Software Engineering",
+      degree: "Computer Programming",
       duration: "2023",
     },
     {

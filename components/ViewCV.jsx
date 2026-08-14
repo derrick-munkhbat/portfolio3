@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
 const ViewCV = () => {
-  const pdfUrl =
-    "https://drive.google.com/file/d/1OpqfmTxBZ6T_8zxazP8WgflyJh6dxAm9/view?usp=drive_link";
+  const pdfUrl = "https://anket.ai/cv/H5XCMsn7";
 
   const handleDownload = () => {
     const link = document.createElement("a");
